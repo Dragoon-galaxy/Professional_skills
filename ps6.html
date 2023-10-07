@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Squares and Cubes</title>
+    <style>
+        body {
+            text-align: center;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3kIx7kK7a1I4B1VHCUO67FvRwOjkfd5ZvATdDTqfbvI7kQm0jPtffBKbnikrehml1Q1E&usqp=CAU');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        table {
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 8px 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Squares and Cubes</h1>
+    <table border="4">
+        <tr>
+            <th>Number</th>
+            <th>Square</th>
+            <th>Cube</th>
+        </tr>
+        <script>
+            for (let i = 0; i <= 10; i++) {
+                const square = i * i;
+                const cube = i * i * i;
+
+                document.write(`
+                    <tr>
+                        <td>${i}</td>
+                        <td>${square}</td>
+                        <td>${cube}</td>
+                    </tr>
+                `);
+            }
+        </script>
+    </table>
+</body>
+</html>

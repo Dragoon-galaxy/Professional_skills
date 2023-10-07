@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>String and Number Functions</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        background-image: url("https://img.freepik.com/free-vector/rectangle-gold-frame-pastel-orange-background-vector_53876-113943.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+      }
+      .content {
+        text-align: center;
+      }
+    </style>
+    <script>
+      // Function to find the position of the leftmost vowel in a string
+      function findLeftmostVowelPosition(inputString) {
+        const vowels = "AEIOUaeiou";
+        for (let i = 0; i < inputString.length; i++) {
+          if (vowels.includes(inputString[i])) {
+            return i + 1; // Adding 1 to make it 1-based index
+          }
+        }
+        return -1; // Return -1 if no vowel is found
+      }
+
+      // Function to reverse the digits of a number
+      function reverseNumberDigits(number) {
+        if (typeof number !== "number") {
+          return "Invalid input. Please enter a number.";
+        }
+        const reversed = parseFloat(
+          number.toString().split("").reverse().join("")
+        );
+        return reversed;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="content">
+      <h1>String and Number Functions</h1>
+      <p>Find the position of the leftmost vowel in a string:</p>
+      <input type="text" id="stringInput" placeholder="Enter a string" />
+      <button onclick="findVowelPosition()">Find Position</button>
+      <p id="vowelPositionResult"></p>
+
+      <p>Reverse the digits of a number:</p>
+      <input type="number" id="numberInput" placeholder="Enter a number" />
+      <button onclick="reverseNumber()">Reverse Digits</button>
+      <p id="reversedNumberResult"></p>
+    </div>
+
+    <script>
+      function findVowelPosition() {
+        const inputString = document.getElementById("stringInput").value;
+        const position = findLeftmostVowelPosition(inputString);
+        if (position === -1) {
+          document.getElementById("vowelPositionResult").textContent =
+            "No vowels found in the string.";
+        } else {
+          document.getElementById(
+            "vowelPositionResult"
+          ).textContent = `The leftmost vowel is at position ${position}.`;
+        }
+      }
+
+      function reverseNumber() {
+        const inputNumber = parseFloat(
+          document.getElementById("numberInput").value
+        );
+        const reversed = reverseNumberDigits(inputNumber);
+        document.getElementById(
+          "reversedNumberResult"
+        ).textContent = `Reversed Number: ${reversed}`;
+      }
+    </script>
+  </body>
+</html>
